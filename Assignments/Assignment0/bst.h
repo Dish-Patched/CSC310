@@ -23,9 +23,9 @@ public:
     void inorderTraversal();
     void preorderTraversal();
     void postorderTraversal();
-    bool treeState();
+    void treeState();
     int treeHeight();
-    ~BinaryTree();
+    ~BinarySearchTree();
 private:
     void inorder(Node<Type>*);
     void preorder(Node<Type>*);
@@ -35,3 +35,5 @@ private:
     Type sum(Node<Type>*);
     Type max(Type, Type);
 };
+
+//hello

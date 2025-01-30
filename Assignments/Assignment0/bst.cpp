@@ -7,7 +7,7 @@ BinarySearchTree<Type>::BinarySearchTree()
 }
 
 template<class Type>
-void BinarySearchTree<Type>::insertNode(const Type x) 
+void BinarySearchTree<Type>::insertNode(const Type& x) 
 {
     Node<Type>* current, *prevCurrent=NULL, *newNode;
     newNode = new Node<Type>;
@@ -165,7 +165,7 @@ void BinarySearchTree<Type>::postorderTraversal()
 }
 
 template<class Type>
-void BinarySearchTree<Type>::inorder(Node<Type>* x)
+void BinarySearchTree<Type>::inorder(Node<Type>* p)
 {
     if(p != NULL){
         inorder(p->llink);
@@ -175,7 +175,7 @@ void BinarySearchTree<Type>::inorder(Node<Type>* x)
 }
 
 template<class Type>
-void BinarySearchTree<Type>::preorder(Node<Type>* x)
+void BinarySearchTree<Type>::preorder(Node<Type>* p)
 {
     if(p != NULL){
         cout << p->info << " ";
@@ -185,7 +185,7 @@ void BinarySearchTree<Type>::preorder(Node<Type>* x)
 }
 
 template<class Type>
-void BinarySearchTree<Type>::postorder(Node<Type>* x)
+void BinarySearchTree<Type>::postorder(Node<Type>* p)
 {
     if(p != NULL){
         postorder(p->llink);
@@ -241,4 +241,10 @@ template<class Type>
 int BinarySearchTree<Type>::treeHeight()
 {
     return height(root);
+}
+
+template<class Type>
+BinarySearchTree<Type>::~BinarySearchTree()
+{
+    destroy(root);
 }

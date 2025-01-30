@@ -1,4 +1,5 @@
 #include "bst.h"
+#include "customErrorClass.h"
 
 template<class Type>
 BinarySearchTree<Type>::BinarySearchTree()
@@ -22,7 +23,7 @@ void BinarySearchTree<Type>::insertNode(const Type& x)
         while(current != NULL){
             prevCurrent = current;
             if(current->info == x){
-                cout << "Node already exists" << endl;
+                throw MyException("Node already exists");
                 return;
             }
             else{
@@ -45,7 +46,7 @@ void BinarySearchTree<Type>::deleteFromTree(Node<Type>*& p)
 {
 	Node<Type>* current, *prevCurrent, *temp;
 	if (p == NULL)
-		cout << "The node to be deleted is NULL!" << endl;
+		throw MyException("The node to be deleted is NULL!");
 	else if (p->llink == NULL && p->rlink == NULL) //p points to a leaf
 	{
 		temp = p;
@@ -89,7 +90,7 @@ void BinarySearchTree<Type>::deleteNode(const Type& x)
 	Node<Type>* prevCurrent;
 	bool found = false;
 	if (this->root == NULL)
-		cout << "Cannot delete from an empty tree!" << endl;
+		throw MyException("Cannot delete from an empty tree!");
 	else
 	{
 		current = this->root;
@@ -108,7 +109,7 @@ void BinarySearchTree<Type>::deleteNode(const Type& x)
 			}
 		}
 		if (current == NULL)
-			cout << "The item is not in the tree!" << endl;
+			throw MyException("The item is not in the tree!");
 		else if (found)
 		{
 			if (current == this->root)
@@ -128,7 +129,7 @@ bool BinarySearchTree<Type>::search(const Type& x)
     Node<Type>* current;
     bool found = false;
     if(this->root == NULL)
-        cout << "Cannot search in an empty tree" << endl;
+        throw MyException("Cannot search in an empty tree");
     else{
         current = this->root;
         while(current != NULL && !found){
@@ -207,7 +208,7 @@ Type BinarySearchTree<Type>::sum(Node<Type>* p)
 template<class Type>
 void BinarySearchTree<Type>::treeState(){
     if(root == NULL)
-        cout << "The tree is empty";
+        throw MyException("The tree is empty");
     else{
         if(sum(root->llink) == sum(root->rlink))
             cout << "Balanced Tree";

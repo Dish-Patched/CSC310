@@ -18,5 +18,8 @@ customErrorClass.o: customErrorClass.cpp ${DEPS}
 customErrorHandling.o: customErrorHandling.cpp ${DEPS}
 	$(CC) -c -o $@ $(CFLAGS) $<
 
-errorTutorial: $(OBJS)
+bst: bst.cpp mainbst.cpp $(OBJS)
 	$(CC) -o $@ $^ $(CFLAGS)
+
+bst.cpp: bst.h
+bstmain.cpp: bst.h

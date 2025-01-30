@@ -11,6 +11,23 @@ int main()
 	bst.insertNode(15); 
 
     bst.inorderTraversal();
+	cout << endl;
+	bst.preorderTraversal();
+	cout << endl;
+	bst.postorderTraversal();
+	cout << endl;
+
+	bst.deleteNode(2);
+	bst.inorderTraversal();
+	cout << endl;
+
+	cout << bst.search(7) << endl;
+
+	bst.treeState();
+	cout << endl;
+
+	cout << bst.treeHeight() << endl;
+	
 
     return 0;
 }

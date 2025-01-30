@@ -244,6 +244,18 @@ int BinarySearchTree<Type>::treeHeight()
 }
 
 template<class Type>
+void BinarySearchTree<Type>::destroy(Node<Type>*& p)
+{
+	if (p != NULL)
+	{
+		destroy(p->llink);
+		destroy(p->rlink);
+		delete p;
+		p = NULL;
+	}
+}
+
+template<class Type>
 BinarySearchTree<Type>::~BinarySearchTree()
 {
     destroy(root);

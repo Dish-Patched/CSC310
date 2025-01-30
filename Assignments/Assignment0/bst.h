@@ -34,6 +34,7 @@ private:
     void deleteFromTree(Node<Type>*&);
     Type sum(Node<Type>*);
     Type max(Type, Type);
+    void destroy(Node<Type>*&);
 };
 
 //hello

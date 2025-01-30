@@ -1,4 +1,6 @@
-CFLAGS 		 := -I.
+INCLUDE_DIRS := Includes
+CC 			 := g++
+CFLAGS 		 := -I$(INCLUDE_DIRS)
 
 OBJS 		 := customErrorClass.o bst.o mainbst.o
 DEPS 		 := customErrorClass.h bst.h

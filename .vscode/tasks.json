@@ -45,6 +45,14 @@
                 "isDefault": true
             },
             "detail": "compiler: /usr/bin/g++"
+        },
+        {
+            "label": "Make Current Dir",
+            "type": "shell",
+            "command": "make",
+            "args": [
+                "-C", "${fileDirname}"
+            ]
         }
     ],
     "version": "2.0.0"

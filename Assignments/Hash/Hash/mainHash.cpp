@@ -13,7 +13,7 @@ int main() {
 
         auto data = readDataFromFile(file);
         int numSearch = data.size() / 2;
-        int numDelete = 30;
+        int numDelete = 100;
 
         for (auto method : methods) {
             cout << "\n----------------------------------------" << endl;
